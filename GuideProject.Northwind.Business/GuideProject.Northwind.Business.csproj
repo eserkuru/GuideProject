@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GuideProject.Northwind.DataAccess\GuideProject.Northwind.DataAccess.csproj" />
+    <ProjectReference Include="..\GuideProject.Northwind.Entities\GuideProject.Northwind.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

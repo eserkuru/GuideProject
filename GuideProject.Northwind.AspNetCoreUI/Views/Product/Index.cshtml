@@ -1,0 +1,36 @@
+﻿@model GuideProject.Northwind.AspNetCoreUI.Models.ProductListViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex">
+    <div class="col-4">
+        @await Component.InvokeAsync("CategoryList")
+    </div>
+    <div class="col-8">
+        <div>
+            <table class="table table-responsive">
+                <tr>
+                    <td>Product Name</td>
+                    <td>Unit Price</td>
+                    <td>Units In Stock</td>
+                    <td></td>
+                </tr>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <td>@product.ProductName</td>
+                        <td>@product.UnitPrice</td>
+                        <td>@product.UnitsInStock</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <product-list-pager current-category="@Model.CurrentCategory"
+                            current-page="@Model.CurrentPage"
+                            page-count="@Model.PageCount"
+                            page-size="@Model.PageSize">
+        </product-list-pager>
+    </div>
+</div>
